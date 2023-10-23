@@ -1,7 +1,14 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from 'next/image';
+import styles from './page.module.css';
 
-export default function Home() {
+import gsap from "gsap";
+import { ScrollSmoother } from 'gsap/dist/ScrollSmoother';
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollSmoother);
+}
+
+export default function Home () {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -91,5 +98,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
